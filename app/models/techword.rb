@@ -1,0 +1,2 @@
+class Techword < ApplicationRecord
+end
