@@ -1,10 +1,11 @@
  Rails.application.routes.draw do
 
-  resources :techwords
+  resources :techwords, only: [:index, :show]
   get 'home/index'
   root 'home#index'
 
   namespace :admins do
+    resources :techwords
     resources :categories
     resources :articles do
         resources :article_notes
