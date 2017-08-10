@@ -2,6 +2,6 @@ class Article < ApplicationRecord
   validates :title, presence: true, uniqueness: true,
                             length: {minimum: 3}
   validates :description, presence: true
-  belongs_to :category
+  belongs_to :category, optional: true
   has_many :article_notes
 end

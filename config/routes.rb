@@ -1,5 +1,6 @@
  Rails.application.routes.draw do
 
+  devise_for :users
   resources :techwords, only: [:index, :show]
   get 'home/index'
   root 'home#index'
