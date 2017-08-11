@@ -2,6 +2,7 @@
 
   devise_for :users
   resources :techwords, only: [:index, :show]
+  resources :articles, only: [:show]
   get 'home/index'
   root 'home#index'
 
