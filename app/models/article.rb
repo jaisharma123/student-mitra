@@ -4,4 +4,5 @@ class Article < ApplicationRecord
   validates :description, presence: true
   belongs_to :category, optional: true
   has_many :article_notes
+  has_many :comments, as: :commentable
 end
