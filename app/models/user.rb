@@ -4,4 +4,16 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :comments
+  has_many :articles
+  has_many :techwords
+
+  ROLES = %w[admin  author guest].freeze
+
+  def admin?
+    self.role == "admin"
+  end
+
+  def author?
+    self.role == "author"
+  end
 end

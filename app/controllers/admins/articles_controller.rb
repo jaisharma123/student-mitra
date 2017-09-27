@@ -1,6 +1,7 @@
 class Admins::ArticlesController < ApplicationController
+  load_and_authorize_resource
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-
+  #before_action :authenticate_user!, only: [:create, :new, :edit, :update, :destroy]
   # GET /articles
   # GET /articles.json
   def index
@@ -69,6 +70,6 @@ class Admins::ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :description)
+      params.require(:article).permit(:title, :description, :category_id, :user_id)
     end
 end

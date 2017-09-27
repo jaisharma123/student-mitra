@@ -5,4 +5,5 @@ class Article < ApplicationRecord
   belongs_to :category, optional: true
   has_many :article_notes
   has_many :comments, as: :commentable
+  belongs_to :user, optional: true
 end
