@@ -9,6 +9,10 @@ class User < ApplicationRecord
 
   ROLES = %w[admin  author guest].freeze
 
+   def full_name
+    "#{self.first_name} #{self.last_name}"
+  end
+
   def admin?
     self.role == "admin"
   end
