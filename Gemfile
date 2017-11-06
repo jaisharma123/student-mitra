@@ -65,3 +65,7 @@ group :production do
   gem 'rails_12factor'
 end
 gem 'cancancan', '~> 2.0'
+
+gem 'pdfkit'
+
+gem 'wkhtmltopdf-binary'

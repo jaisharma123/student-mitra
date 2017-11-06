@@ -7,7 +7,11 @@
         confirmations: 'users/confirmations'
       }
   resources :techwords, only: [:index, :show]
-  resources :articles, only: [:show,:index  ]
+  resources :articles do
+    member do
+      get :download_article_pdf
+    end
+  end
   get 'home/index'
   root 'home#index'
 
